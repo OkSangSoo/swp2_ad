@@ -22,64 +22,64 @@ class Layout(QWidget):
         japaneseFoodButton=QPushButton("일식")
         meatFoodButton=QPushButton("양식")
         randomButton=QPushButton("무작위")
+        randomButton_2=QPushButton("무작위")
         decideButton=QPushButton("확인")
         restaurantLabel = QLabel("식당")
         phoneNumberLabel = QLabel("전화 번호 ")
         specialLabel = QLabel("비고")
+        textMessage = QLabel("어떤 음식이 좋을까요 ?")
+        NoneMessage=QLabel("")
+        self.restaurantText= QTextEdit()
+        self.phoneNumText=QTextEdit()
+        self.specialText=QTextEdit()
 
-        #두번째 줄은 hbox 입니다.
-        hbox=QHBoxLayout()
-        hbox.addWidget(koreaFoodButton)
-        hbox.addWidget(chineseFoodButton)
-        hbox.addWidget(japaneseFoodButton)
-        hbox.addWidget(meatFoodButton)
-        hbox.addStretch(1)
-        hbox.addWidget(randomButton)
+        ##LayoutBox 들을 생성 합니다.
 
-        hbox4=QHBoxLayout()
+        hbox_1=QHBoxLayout()
+        hbox_2=QHBoxLayout()
+        hbox_1_1=QHBoxLayout()
+        hbox_1_2=QHBoxLayout()
+        vbox_2_1=QVBoxLayout()
+        vbox_2_2=QVBoxLayout()
+        vbox_2_3=QVBoxLayout()
+        vbox_2_4=QVBoxLayout()
 
+        ##hbox_1과 hbox_2에 레이아웃을 집어 넣습니다.
 
+        hbox_1.addLayout(hbox_1_1)
+        hbox_1.addLayout(hbox_1_2)
+        hbox_2.addLayout(vbox_2_1)
+        hbox_2.addLayout(vbox_2_2)
+        hbox_2.addLayout(vbox_2_3)
+        hbox_2.addLayout(vbox_2_4)
 
+        ##hbox_1안의 레이아웃에 위젯을 넣습니다.
 
+        hbox_1_1.addWidget(textMessage)
+        hbox_1_2.addWidget(koreaFoodButton)
+        hbox_1_2.addWidget(chineseFoodButton)
+        hbox_1_2.addWidget(japaneseFoodButton)
+        hbox_1_2.addWidget(meatFoodButton)
+        hbox_1_2.addStretch(1)
+        hbox_1_2.addWidget(randomButton)
 
+        ##hbox_2안의 레이아웃에 위젯을 넣습니다.
+
+        vbox_2_1.addWidget(restaurantLabel)
+        vbox_2_1.addWidget(self.restaurantText)
+        vbox_2_2.addWidget(phoneNumberLabel)
+        vbox_2_2.addWidget(self.phoneNumText)
+        vbox_2_3.addWidget(specialLabel)
+        vbox_2_3.addWidget(self.specialText)
+        vbox_2_4.addWidget(NoneMessage)
+        vbox_2_4.addWidget(randomButton_2)
+        vbox_2_4.addStretch(1)
+        vbox_2_4.addWidget(decideButton)
+
+        ##보여줄 레이아웃
         vbox=QVBoxLayout()
-
-        ##hbox3은 두번째 레이아웃 입니다.
-        hbox3=QHBoxLayout()
-        textMessage1 = QLabel("어떤 음식이 좋을까요 ?")
-        textMessage2 = QLabel("")
-        textMessage=QLabel("")
-        hbox3.addWidget(textMessage)
-        hbox3.addWidget(textMessage1)
-        hbox3.addWidget(textMessage2)
-
-        hbox3.addWidget(decideButton)
-        vbox.addLayout(hbox3)
-
-        vbox.addLayout(hbox)
-
-
-        vbox.addStretch(1)
-        self.menuText1=QTextEdit()
-        vbox1_1=QVBoxLayout()
-        vbox1_1.addWidget(restaurantLabel)
-        vbox1_1.addWidget(self.menuText1)
-        self.menuText2 = QTextEdit()
-        vbox1_2 = QVBoxLayout()
-        vbox1_2.addWidget(phoneNumberLabel)
-        vbox1_2.addWidget(self.menuText2)
-        self.menuText3 = QTextEdit()
-        vbox1_3 = QVBoxLayout()
-        vbox1_3.addWidget(specialLabel)
-        vbox1_3.addWidget(self.menuText3)
-
-        hbox4.addLayout(vbox1_1)
-        hbox4.addLayout(vbox1_2)
-        hbox4.addLayout(vbox1_3)
-
-        vbox.addLayout(hbox4)
-
-
+        vbox.addLayout(hbox_1)
+        vbox.addLayout(hbox_2)
         self.setLayout(vbox)
 
     def keyPressEvent(self,e):
