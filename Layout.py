@@ -7,7 +7,7 @@ from PyQt5.QtWidgets import QToolButton, QSizePolicy
 from random import random
 from PyQt5.QtWidgets import QMainWindow
 
-class Layout(QWidget):
+class Layout_first(QWidget):
     def __init__(self, parent=None):
 
         ##위젯의 사이즈 조절
@@ -35,7 +35,7 @@ class Layout(QWidget):
 
         ##LayoutBox 들을 생성 합니다.
 
-        hbox_1=QHBoxLayout()
+        vbox_1=QVBoxLayout()
         hbox_2=QHBoxLayout()
         hbox_1_1=QHBoxLayout()
         hbox_1_2=QHBoxLayout()
@@ -46,8 +46,8 @@ class Layout(QWidget):
 
         ##hbox_1과 hbox_2에 레이아웃을 집어 넣습니다.
 
-        hbox_1.addLayout(hbox_1_1)
-        hbox_1.addLayout(hbox_1_2)
+        vbox_1.addLayout(hbox_1_1)
+        vbox_1.addLayout(hbox_1_2)
         hbox_2.addLayout(vbox_2_1)
         hbox_2.addLayout(vbox_2_2)
         hbox_2.addLayout(vbox_2_3)
@@ -78,7 +78,7 @@ class Layout(QWidget):
 
         ##보여줄 레이아웃
         vbox=QVBoxLayout()
-        vbox.addLayout(hbox_1)
+        vbox.addLayout(vbox_1)
         vbox.addLayout(hbox_2)
         self.setLayout(vbox)
 
@@ -86,11 +86,21 @@ class Layout(QWidget):
         if e.key()==Qt.Key_Escape:
             self.close()
 
+class Layout_final(QWidget):
+    def __init__(self, parent=None):
+
+        ##위젯의 사이즈 조절
+        super().__init__()
+        self.setGeometry(300,300,500,300)
+        self.initUI()
+
+    def initUI
+
 if __name__ == '__main__':
 
     import sys
 
     app = QApplication(sys.argv)
-    choiceMenu = Layout()
+    choiceMenu = Layout_first()
     choiceMenu.show()
     sys.exit(app.exec_())
