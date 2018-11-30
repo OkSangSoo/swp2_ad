@@ -1,11 +1,8 @@
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QWidget
 from PyQt5.QtWidgets import QLineEdit, QLabel , QTextEdit
-from PyQt5.QtWidgets import QLayout, QGridLayout
 from PyQt5.QtWidgets import QPushButton,QVBoxLayout,QHBoxLayout
-from PyQt5.QtWidgets import QToolButton, QSizePolicy
-from random import random
-from PyQt5.QtWidgets import QMainWindow
+
 
 class Layout_save(QWidget):
     def __init__(self, parent=None):
@@ -19,26 +16,50 @@ class Layout_save(QWidget):
 
         ##모든 버튼과 라벨을 생성합니다.
         vbox=QVBoxLayout()
-        hbox=QHBoxLayout()
-        vbox_1_1_1=QVBoxLayout()
-        vbox_1_1_2=QVBoxLayout()
         hbox_1=QHBoxLayout()
+        hbox_2=QHBoxLayout()
         vbox_1_1=QVBoxLayout()
         vbox_1_2=QVBoxLayout()
         vbox_1_3=QVBoxLayout()
+        vbox_1_4=QVBoxLayout()
+        restaurantLabel=QLabel("식당")
+        menuLabel=QLabel("메뉴")
+        priceLabel=QLabel("가격")
         backButton=QPushButton("뒤로")
+        restaurantText=QTextEdit()
+        menuText=QTextEdit()
+        priceText=QTextEdit()
+        totalPriceLabel=QLabel("총금액 : ")
+        randomButton=QPushButton("무작위선택")
 
-        vbox.addLayout(hbox)
-        hbox.addLayout(vbox_1_1_1)
-        hbox.addLayout(vbox_1_1_2)
+        ##hbox_1에 집어넣기
+        hbox_1.addLayout(vbox_1_1)
+        vbox_1_1.addWidget(restaurantLabel)
+        vbox_1_1.addWidget(restaurantText)
+        hbox_1.addLayout(vbox_1_2)
+        vbox_1_2.addWidget(menuLabel)
+        vbox_1_2.addWidget(menuText)
+        hbox_1.addLayout(vbox_1_3)
+        vbox_1_3.addWidget(priceLabel)
+        vbox_1_3.addWidget(priceText)
+        hbox_1.addLayout(vbox_1_4)
+        vbox_1_4.addWidget(backButton)
+        vbox_1_4.addStretch(1)
 
-        vbox_1_1_1.addLayout(vbox_1_1)
-        vbox_1_1_1.addLayout(vbox_1_2)
-        vbox_1_1_1.addLayout(vbox_1_3)
-        vbox_1_1_2.addWidget(backButton)
-        vbox_1_1_2.addStretch(1)
+        ##hbox_2에 집어넣기
+        hbox_2.addWidget(totalPriceLabel)
+        hbox_2.addStretch(1)
+        hbox_2.addWidget(randomButton)
+        ##vbox에 레이아웃 집어넣기
+        vbox.addLayout(hbox_1)
+        vbox.addLayout(hbox_2)
 
+        ##설정하기
         self.setLayout(vbox)
+
+    def keyPressEvent(self, e):
+        if e.key() == Qt.Key_Escape:
+            self.close()
 
 
 
@@ -147,7 +168,7 @@ class Layout_menu(QWidget):
 
         hbox_2=QHBoxLayout()
         restaurantLabel=QLabel("메뉴를 입력해 주세요 : ")
-        restaurantText=QTextEdit()
+        restaurantText=QLineEdit()
         priceLabel=QLabel("")
         backButton=QPushButton("뒤로")
         vbox_2_1=QVBoxLayout()
