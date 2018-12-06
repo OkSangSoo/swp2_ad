@@ -27,21 +27,23 @@ class randomCategory:
         rdS = random.randrange(len(rdlist))
         self.rdShop = rdlist[rdS]
 
+    def randomAll(self):
+        self.randomBigC()
+        self.randomShop()
+
     def getCgdb(self):
         return self.cgdb
 
     def getrCg(self):
         return self.rCg
 
-    def getrdS(self):
+    def getrdShop(self):
         return self.rdShop
 
 if __name__ == '__main__':
     cg = randomCategory()
     print(cg.getCgdb())
     print(cg.getCgdb()[0]['중식'][1])
-    cg.randomBigC()
-    cg.randomShop()
+    s=cg.randomAll()
     print(cg.getrCg())
-    print(cg.getrdS())
-    \t
+    print(cg.getrdShop())
