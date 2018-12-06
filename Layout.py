@@ -217,6 +217,7 @@ class Layout_menu(QWidget):
 
     def keyPressEvent(self, e):
         if e.key() == Qt.Key_Escape:
+
             self.close()
 if __name__ == '__main__':
 
@@ -225,5 +226,10 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     choiceMenu = Layout_first()
     choiceMenu.show()
+    d1=Layout_menu()
+    d1.show()
+    d2=Layout_save()
+    d2.show()
+
 
     sys.exit(app.exec_())

@@ -1,2 +1,40 @@
-'a':['1','2','3']
+'홍콩반점':[{menu:"자장면", price:4500,special:"곱배기는+1000"},{menu:"짬뽕",price:5000,special:"곱배기는 +1000"},{menu:"탕수육소",price:13000,special:"1~2인분"}{menu:"탕수육중",price:18000,special:"3~4인분"}{menu:"군만두",price:2000,special:""}
+
+'송강루':[{menu:"",price:,special:""},{menu:"",price:,special:""},{menu:"",price:,special:""},{menu:"",price:,special:""},{menu:"",price:,special:""}]
+
+
+'신북경':[{menu:"",price:,special:""},{menu:"",price:,special:""},{menu:"",price:,special:""},{menu:"",price:,special:""},{menu:"",price:,special:""},{menu:"",price:,special:""}]
+
+'삼성원':[{menu:"짬짜면",price:6500,special:""},{menu:"쟁반짜장",price:7000,special:"2인분부터 주문가능"},{menu:"깐풍기",price:28000,special:""},{menu:"굴짬뽕",price:8000,special:"매운맛/순한맛"},{menu:"볶음밥",price:6500,special:"삼선/해물"}]
+
+'돈까페':[{menu:"가츠동",price:6500,special:"6500(닭고기),7000(돼지고기)"},{menu:"오야코동",price:6000,special:"닭고기&계란"},{menu:"규동",price:6000,special:"소고기"},{menu:"소스카츠동",price:6500,special:"곱배기는+500"},{menu:"카라아게 카레동",price:6500,special:""},{menu:" Don cafe SPECIAL",price:20000,special:""}]
+
+'긴자스시':[{menu:"모듬 사시미",price:28000,special:"연어+광어+참치"},{menu:"스페셜 초밥",price:20000,special:"연어뱃살,광어 지느러미,간장새우,생새우,소고기,참치+서비스초밥 1"},{menu:"특 모듬 초밥",price:17000,special:"연어,활어,참치,초새우,초소라,장어,간장새우+서비스초밥 1"},{menu:"연어롤",price:13000,special:""}]
+
+'스시손':[{menu:"스시손 홈파티 초밥셋트 A",price:30000,special:"활어4,연어4,아까미2,메카2,장새우2,아마에비2,생새우2,가리비2,초새우2,관자아부리2,다마고2"},{menu:"스시손 홈파티 사시미셋트",price:29000,special:""},{menu:"스시손 와규스테이크라인",price:25000,special:""},{menu:"스시손 장어라인",price:23000,special:""},{menu:"스시손 혼술콤보",price:18000,special:""}{menu:"스시손 혼밥모둠",price:15000,special:""}]
+
+'가마':[{menu:"영양 닭곰탕",price:3500,special:"소면사리"}]
+
+'누들송':[{menu:"탄탄멘",price:3000,special:""},{menu:"한그릇밥)베이컨오코노미덮밥",price:4000,special:""]
+g
+'데일리밥':[{menu:"갈릭대패삼겹살필라프+뜨끈한 옛날잔치국수",price:4000,special:""}]
+
+'인터쉐프':[{menu:"강된장덮밥+계란후라이",price:2900,special:""}]
+
+'유나인돈까스&우동':[{menu:"등심돈까스",price:8000,special:""},{menu:"안심돈까스",price:8500,special:""},{menu:"생선까스",price:8500,special:""},{menu:"매운철판돈까스",price:9500,special:""},{menu:"치킨까스",price:8000,special:""},{menu:"어묵우동",price:5500,special:""}]
+
+'김가네족발보쌈':[{menu:"왕족발",price:25000,special:"중=35000,대=45000"},{menu:"맛보쌈",price:25000,special:"중=35000,대=45000"},{menu:"보족세트",price:35000,special:"중=50000,대=65000"},{menu:"냉채족발",price:28000,special:"중=43000,대=53000"},{menu:"족발볶음",price:28000,special:"대=53000"},{menu:"족발무침",price:28000,special:"대=53000"}]
+
+'맥스피자':[{menu:"1+1 헝그리세트",price:21000,special:"L=+3000"},{menu:"고추불고기 피자",price:14000,special:"L=+3000"},{menu:"고구마무스 피자",price:13000,special:"L=+3000"},{menu:"1번세트",price:18000,special:"L=+3000,피자+스파게티+콜라"},{menu:"2번세트",price:18000,special:"L=+3000,피자+훈제1/2 또는  순살9EA중 택1"}{menu:"3번세트",price:18000,special:"L=+3000,피자+사이드메뉴(윙,봉,텐더,치즈스틱 중 택1)+콜라"}]
+
+'유성냉면':[{menu:"칡 물냉면",price:7000,special:""},{menu:"칡 비빔냉면",price:7000,special:""},{menu:"손만두",price:6000,special:""},{menu:"콩국수",price:7000,special:""},{menu:"묵사발",price:7000,special:""},{menu:"묵무침",price:12000,special:""}]
+
+'김밥고을':[{menu:"",price:,special:""},{menu:"",price:,special:""},{menu:"",price:,special:""},{menu:"",price:,special:""},{menu:"",price:,special:""},]
+
+'맛깔참죽':[]
+
+'김갈동찌개':[]
+
+'통큰감자탕&해장국':[]
+
 
