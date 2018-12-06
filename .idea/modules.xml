@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/swp2ad.iml" filepath="$PROJECT_DIR$/.idea/swp2ad.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/swp2_ad.iml" filepath="$PROJECT_DIR$/.idea/swp2_ad.iml" />
+>>>>>>> 3012220418ddbfcd8e94eccfaed24f853ad87c70
     </modules>
   </component>
 </project>

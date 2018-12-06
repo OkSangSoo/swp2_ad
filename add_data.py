@@ -9,7 +9,4 @@ for line in fH:
         record[kv[0]] = kv[1]
         scdb+=[record]
 
-print(scdb[1])
-
-e = scdb[1]
-print(e['japanese'])
+print(scdb)
