@@ -55,6 +55,8 @@ class randomCategory:
         Cate = self.getrCg()
         Cate_key = list(Cate.keys())[0]
         rdCate = Cate[Cate_key]
+        rdidx = random.randrange(len(rdCate))
+        self.randomRestaurant = rdCate[rdidx]
         self.rdCategory_str = ''
         for i in rdCate:
             self.rdCategory_str += i +'\n'
@@ -76,6 +78,9 @@ class randomCategory:
 
     def randomGUI(self):
         return self.rdCategory_str
+
+    def randomGUI_getRandomRestaurant(self):
+        return self.randomRestaurant
 
 if __name__ == '__main__':
     cg = randomCategory()

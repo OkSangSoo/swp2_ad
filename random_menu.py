@@ -5,6 +5,7 @@ class randomMenu:
     def __init__(self):
         fH = open("menu.dat")
         self.rdMenuDB = []
+        self.cart = []
         for line in fH:
             dat = line.strip()
             menu = dat.split("\n")
@@ -36,11 +37,24 @@ class randomMenu:
             for j in range (len(self.rdMenuDB[0][restaurant])):
                 i[0] += self.rdMenuDB[0][restaurant][j][i[1]] +'\n'
 
+    def selectMenu(self,menu):
+        restaurant = list(self.rdMenuDB[0].keys())[0]
+        for i in self.getMenus(restaurant):
+            if i[0]==menu:
+                self.chosenMenu = i
+        self.cart.append((restaurant,self.chosenMenu[0],self.chosenMenu[1]))
+
+    def getMenus(self,restaurant):
+        return self.rdMenuDB[0][restaurant]
+
     def getRdmenuDB(self):
         return self.rdMenuDB
 
     def getRandomMenu(self):
         return self.randomMenu
+
+    def getChosenMenu(self):
+        return self.cart
 
     def getMenuGUI(self):
         return self.str_list
@@ -65,3 +79,5 @@ if __name__ == '__main__':
     print(rm.getStrMenu())
     print(rm.getStrPrice())
     print(rm.getStrEtc())
+    rm.selectMenu('자장면')
+    print(rm.getChosenMenu())
