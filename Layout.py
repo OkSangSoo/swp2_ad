@@ -12,6 +12,9 @@ class Layout_save(QWidget):
         self.setGeometry(500,300,600,400)
         self.initUI()
 
+
+
+
     def initUI(self):
 
         ##모든 버튼과 라벨을 생성합니다.
@@ -26,6 +29,8 @@ class Layout_save(QWidget):
         menuLabel=QLabel("메뉴")
         priceLabel=QLabel("가격")
         backButton=QPushButton("뒤로")
+        backButton.clicked.connect(self.backButtonClicked)
+
         restaurantText=QTextEdit()
         menuText=QTextEdit()
         priceText=QTextEdit()
@@ -57,9 +62,20 @@ class Layout_save(QWidget):
         ##설정하기
         self.setLayout(vbox)
 
+        ##버튼이벤트
+
     def keyPressEvent(self, e):
         if e.key() == Qt.Key_Escape:
             self.close()
+
+    def backButtonClicked(self):
+        self.hide()
+        self.Layout_first=Layout_first()
+        self.Layout_first.show()
+
+
+
+
 
 
 
@@ -70,7 +86,8 @@ class Layout_first(QWidget):
         super().__init__()
         self.setGeometry(500,300,600,400)
         self.initUI()
-
+        self.Layout_menu = Layout_menu()
+        self.Layout_save = Layout_save()
     def initUI(self):
         ##모든버튼과 라벨을 생성합니다.
         saveMenu=QPushButton("장바구니")
@@ -88,6 +105,8 @@ class Layout_first(QWidget):
         self.restaurantText= QTextEdit()
         self.phoneNumText=QTextEdit()
         self.specialText=QTextEdit()
+        decideButton.clicked.connect(self.backButtonClicked)
+        saveMenu.clicked.connect(self.saveButtonClicked)
 
         ##LayoutBox 들을 생성 합니다.
 
@@ -148,10 +167,17 @@ class Layout_first(QWidget):
         vbox.addLayout(hbox_2)
         self.setLayout(vbox)
 
+    def backButtonClicked(self):
+        self.hide()
+        self.Layout_menu.show()
+
     def keyPressEvent(self,e):
         if e.key()==Qt.Key_Escape:
             self.close()
 
+    def saveButtonClicked(self):
+        self.hide()
+        self.Layout_save.show()
 class Layout_menu(QWidget):
     def __init__(self, parent=None):
 
@@ -183,7 +209,8 @@ class Layout_menu(QWidget):
         self.menuText=QTextEdit("")
         self.priceText=QTextEdit("")
         self.specialText=QTextEdit("")
-
+        decideButton.clicked.connect(self.decideButtonClicked)
+        backButton.clicked.connect(self.backButtonClicked)
 
         ##vbox에 vbox_1과 hbox_2 넣기
         vbox.addLayout(hbox_1)
@@ -217,8 +244,19 @@ class Layout_menu(QWidget):
 
     def keyPressEvent(self, e):
         if e.key() == Qt.Key_Escape:
-
             self.close()
+
+    def backButtonClicked(self):
+        self.hide()
+        self.Layout_first=Layout_first()
+        self.Layout_first.show()
+
+    def decideButtonClicked(self):
+        self.hide()
+        self.Layout_save=Layout_save()
+        self.Layout_save.show()
+
+
 if __name__ == '__main__':
 
     import sys
@@ -226,10 +264,6 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     choiceMenu = Layout_first()
     choiceMenu.show()
-    d1=Layout_menu()
-    d1.show()
-    d2=Layout_save()
-    d2.show()
 
 
     sys.exit(app.exec_())
