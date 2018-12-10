@@ -43,7 +43,11 @@ class randomCategory:
         if category == '한식':
             self.returns = self.cgdb[4][category]
 
+<<<<<<< HEAD
+
+=======
     def category_GUI(self, category):
+>>>>>>> 
         self.category_str = ''
         self.chooseCategory(category)
         restaurants = self.getChosen()
@@ -76,6 +80,8 @@ class randomCategory:
     def categoryGUI(self):
         return self.category_str
 
+<<<<<<< HEAD
+=======
     def randomGUI(self):
         return self.rdCategory_str
 
@@ -94,3 +100,4 @@ if __name__ == '__main__':
     print(cg.categoryGUI())
     cg.random_GUI()
     print(cg.randomGUI())
+>>>>>>> 3edb39b6de01eb53575bf75ff7464049b74b8024
