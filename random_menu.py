@@ -14,6 +14,7 @@ class randomMenu:
                 ls = kv[1].replace(',',' ').split()
                 count = 0
                 tupList = []
+                print(ls)
                 for i in range(0,len(ls),3):
                     tup = (ls[i],ls[i+1],ls[i+2])
                     tupList.append(tup)
@@ -22,9 +23,9 @@ class randomMenu:
                 self.rdMenuDB +=[record]
 
 
-    def randomMenu(self):
-        randNum = random.randrange(len(self.rdMenuDB[0]['홍콩반점']))
-        self.randomMenu = self.rdMenuDB[0]['홍콩반점'][randNum]
+    def randomMenu(self, restaurant):
+        randNum = random.randrange(len(self.rdMenuDB[0][restaurant]))
+        self.randomMenu = self.rdMenuDB[0][restaurant][randNum]
 
     def getRdmenuDB(self):
         return self.rdMenuDB
@@ -33,7 +34,8 @@ class randomMenu:
         return self.randomMenu
 
 if __name__ == '__main__':
-    cg = randomMenu()
-    print(cg.getRdmenuDB())
-    cg.randomMenu()
-    print(cg.getRandomMenu())
+    rm = randomMenu()
+    print(rm.getRdmenuDB())
+    restaurant = '홍콩반점'
+    rm.randomMenu(restaurant)
+    print(rm.getRandomMenu())
