@@ -20,7 +20,6 @@ class randomCategory:
         rdBC = random.randrange(len(self.cgdb))
         self.rCg = self.cgdb[rdBC]
 
-
     def randomShop(self):
         rdidx = list(self.rCg.keys())[0]
         rdlist = self.rCg[rdidx]
@@ -44,13 +43,25 @@ class randomCategory:
         if category == '한식':
             self.returns = self.cgdb[4][category]
 
+<<<<<<< HEAD
 
-    def category_GUI(self,category):
+=======
+    def category_GUI(self, category):
+>>>>>>> 
         self.category_str = ''
         self.chooseCategory(category)
         restaurants = self.getChosen()
         for i in range(len(restaurants)):
             self.category_str += restaurants[i] +'\n'
+
+    def random_GUI(self):
+        self.randomBigC()
+        Cate = self.getrCg()
+        Cate_key = list(Cate.keys())[0]
+        rdCate = Cate[Cate_key]
+        self.rdCategory_str = ''
+        for i in rdCate:
+            self.rdCategory_str += i +'\n'
 
     def getCgdb(self):
         return self.cgdb
@@ -67,3 +78,21 @@ class randomCategory:
     def categoryGUI(self):
         return self.category_str
 
+<<<<<<< HEAD
+=======
+    def randomGUI(self):
+        return self.rdCategory_str
+
+if __name__ == '__main__':
+    cg = randomCategory()
+    print(cg.getCgdb())
+    print(cg.getCgdb()[0]['중식'][1])
+    s=cg.randomAll()
+    print(cg.getrCg())
+    print(cg.getrdShop())
+    category = '한식'
+    cg.category_GUI(category)
+    print(cg.categoryGUI())
+    cg.random_GUI()
+    print(cg.randomGUI())
+>>>>>>> 3edb39b6de01eb53575bf75ff7464049b74b8024
