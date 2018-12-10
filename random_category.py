@@ -44,10 +44,7 @@ class randomCategory:
             self.returns = self.cgdb[4][category]
 
     def category_GUI(self, category):
-<<<<<<< HEAD
 
-=======
->>>>>>> 8c5c2c8e51d9cf7ee694d48683de053f51b10917
         self.category_str = ''
         self.chooseCategory(category)
         restaurants = self.getChosen()
@@ -79,11 +76,7 @@ class randomCategory:
 
     def categoryGUI(self):
         return self.category_str
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> 8c5c2c8e51d9cf7ee694d48683de053f51b10917
     def randomGUI(self):
         return self.rdCategory_str
 
@@ -102,7 +95,4 @@ if __name__ == '__main__':
     print(cg.categoryGUI())
     cg.random_GUI()
     print(cg.randomGUI())
-<<<<<<< HEAD
 
-=======
->>>>>>> 8c5c2c8e51d9cf7ee694d48683de053f51b10917
