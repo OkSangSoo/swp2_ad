@@ -31,6 +31,25 @@ class randomCategory:
         self.randomBigC()
         self.randomShop()
 
+    def chooseCategory(self,category):
+        self.returns = []
+        if category == '중식':
+            self.returns = self.cgdb[0][category]
+        if category == '일식':
+            self.returns = self.cgdb[1][category]
+        if category == '학식':
+            self.returns = self.cgdb[2][category]
+        if category == '양식':
+            self.returns = self.cgdb[3][category]
+        if category == '한식':
+            self.returns = self.cgdb[4][category]
+
+    def category_GUI(self):
+        self.category_str = ''
+        restaurants = self.getChosen()
+        for i in range(len(restaurants)):
+            self.category_str += restaurants[i] +'\n'
+
     def getCgdb(self):
         return self.cgdb
 
@@ -40,6 +59,12 @@ class randomCategory:
     def getrdShop(self):
         return self.rdShop
 
+    def getChosen(self):
+        return self.returns
+
+    def categoryGUI(self):
+        return self.category_str
+
 if __name__ == '__main__':
     cg = randomCategory()
     print(cg.getCgdb())
@@ -47,3 +72,8 @@ if __name__ == '__main__':
     s=cg.randomAll()
     print(cg.getrCg())
     print(cg.getrdShop())
+    category = '한식'
+    cg.chooseCategory(category)
+    print(cg.getChosen())
+    cg.category_GUI()
+    print(cg.categoryGUI())
