@@ -2,7 +2,8 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QWidget
 from PyQt5.QtWidgets import QLineEdit, QLabel , QTextEdit
 from PyQt5.QtWidgets import QPushButton,QVBoxLayout,QHBoxLayout
-
+import random_category
+import random_menu
 
 class Layout_save(QWidget):
     def __init__(self, parent=None):
@@ -32,8 +33,11 @@ class Layout_save(QWidget):
         backButton.clicked.connect(self.backButtonClicked)
 
         restaurantText=QTextEdit()
+        restaurantText.setReadOnly(True)
         menuText=QTextEdit()
+        menuText.setReadOnly(True)
         priceText=QTextEdit()
+        priceText.setReadOnly(True)
         totalPriceLabel=QLabel("총금액 : ")
         randomButton=QPushButton("무작위선택")
 
@@ -103,10 +107,19 @@ class Layout_first(QWidget):
         specialLabel = QLabel("비고")
         textMessage = QLabel("어떤 음식이 좋을까요 ?")
         self.restaurantText= QTextEdit()
+        self.restaurantText.setReadOnly(True)
         self.phoneNumText=QTextEdit()
+        self.phoneNumText.setReadOnly(True)
         self.specialText=QTextEdit()
+        self.specialText.setReadOnly(True)
         decideButton.clicked.connect(self.backButtonClicked)
         saveMenu.clicked.connect(self.saveButtonClicked)
+        koreaFoodButton.clicked.connect(self.kBC)
+        chineseFoodButton.clicked.connect(self.cBC)
+        japaneseFoodButton.clicked.connect(self.jBC)
+        meatFoodButton.clicked.connect(self.mBC)
+        schoolFoodButton.clicked.connect(self.sFC)
+        randomButton.clicked.connect(self.randomButtonClicked)
 
         ##LayoutBox 들을 생성 합니다.
 
@@ -166,10 +179,49 @@ class Layout_first(QWidget):
         vbox.addLayout(vbox_1)
         vbox.addLayout(hbox_2)
         self.setLayout(vbox)
+        self.cate=""
+
+
 
     def backButtonClicked(self):
         self.hide()
         self.Layout_menu.show()
+
+    def randomButtonClicked(self):
+        self.category=random_category.randomCategory()
+        self.category.randomAll()
+        ##self.cate=
+        self.restaurantText.setText(self.category.getrCg)
+
+    def kBC(self):
+        self.category=random_category.randomCategory()
+        self.category.category_GUI("한식")
+        self.cate="한식"
+        self.restaurantText.setText(self.category.category_str)
+
+    def cBC(self):
+        self.category=random_category.randomCategory()
+        self.category.category_GUI("중식")
+        self.cate="중식"
+        self.restaurantText.setText(self.category.category_str)
+
+    def jBC(self):
+        self.category=random_category.randomCategory()
+        self.cate="일식"
+        self.category.category_GUI("일식")
+        self.restaurantText.setText(self.category.category_str)
+
+    def mBC(self):
+        self.cate="양식"
+        self.category=random_category.randomCategory()
+        self.category.category_GUI("양식")
+        self.restaurantText.setText(self.category.category_str)
+
+    def sFC(self):
+        self.cate="학식"
+        self.category=random_category.randomCategory()
+        self.category.category_GUI("학식")
+        self.restaurantText.setText(self.category.category_str)
 
     def keyPressEvent(self,e):
         if e.key()==Qt.Key_Escape:
@@ -207,10 +259,14 @@ class Layout_menu(QWidget):
         price_Label=QLabel("가격")
         special_Label=QLabel("비고")
         self.menuText=QTextEdit("")
+        self.menuText.setReadOnly(True)
         self.priceText=QTextEdit("")
+        self.priceText.setReadOnly(True)
         self.specialText=QTextEdit("")
+        self.specialText.setReadOnly(True)
         decideButton.clicked.connect(self.decideButtonClicked)
         backButton.clicked.connect(self.backButtonClicked)
+
 
         ##vbox에 vbox_1과 hbox_2 넣기
         vbox.addLayout(hbox_1)
@@ -226,9 +282,13 @@ class Layout_menu(QWidget):
 
         ##vbox_2 채워넣기
 
+
+
+
         hbox_2.addLayout(vbox_2_1)
         vbox_2_1.addWidget(menu_Label)
         vbox_2_1.addWidget(self.menuText)
+
         hbox_2.addLayout(vbox_2_2)
         vbox_2_2.addWidget(price_Label)
         vbox_2_2.addWidget(self.priceText)
@@ -241,6 +301,7 @@ class Layout_menu(QWidget):
         vbox_2_4.addWidget(decideButton)
 
         self.setLayout(vbox)
+
 
     def keyPressEvent(self, e):
         if e.key() == Qt.Key_Escape:

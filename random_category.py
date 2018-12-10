@@ -44,8 +44,10 @@ class randomCategory:
         if category == '한식':
             self.returns = self.cgdb[4][category]
 
-    def category_GUI(self):
+
+    def category_GUI(self,category):
         self.category_str = ''
+        self.chooseCategory(category)
         restaurants = self.getChosen()
         for i in range(len(restaurants)):
             self.category_str += restaurants[i] +'\n'
@@ -65,15 +67,3 @@ class randomCategory:
     def categoryGUI(self):
         return self.category_str
 
-if __name__ == '__main__':
-    cg = randomCategory()
-    print(cg.getCgdb())
-    print(cg.getCgdb()[0]['중식'][1])
-    s=cg.randomAll()
-    print(cg.getrCg())
-    print(cg.getrdShop())
-    category = '한식'
-    cg.chooseCategory(category)
-    print(cg.getChosen())
-    cg.category_GUI()
-    print(cg.categoryGUI())
